@@ -1,9 +1,12 @@
 vim.g.mapleader = ' '
 
+-- w.listchars = 'tab:⇨|,nbsp:␣,trail:‗,extends:>,precedes:<' --eol:↵, tab:|⇆⇥_, tab:‗‗,tab:⇨|
+vim.opt.listchars = { tab = '  ', nbsp = '␣', trail = '‗', extends = '>', precedes = '<', eol = ' ' }
+
 local o = vim.o -- Global
---o.scrolloff         = 8; view movements: z+b|z|t, <C>+y|e (one line), ud (halfpage), bf (page, cursor to last line)
+-- o.scrolloff         = 8; view movements: z+b|z|t, <C>+y|e (one line), ud (halfpage), bf (page, cursor to last line)
 -- o.completeopt = 'menuone,noselect' -- Set in nvim-cmp
---o.tm = 500
+-- o.tm = 500
 o.autoindent = true
 o.bacground = 'dark'
 o.backup = false
@@ -44,8 +47,7 @@ o.wrap = true
 
 local w = vim.wo -- Window
 -- w.colorcolumn = '80'
-w.list = false
-w.listchars = 'tab:⇨|,nbsp:␣,trail:‗,extends:>,precedes:<' --eol:↵, tab:|⇆⇥_, tab:‗‗,tab:⇨|
+w.list = true
 w.number = true
 w.relativenumber = false
 w.signcolumn = 'yes'
