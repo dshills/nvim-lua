@@ -3,6 +3,7 @@ vim.call('plug#begin', '~/.config/nvim/plugged')
 -- lua utils (required for telescope)
 Plug 'nvim-lua/plenary.nvim'
 -- Fuzzy find
+Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
 Plug('nvim-telescope/telescope.nvim', { tag = '0.1.0' })
 -- icons
 Plug 'nvim-tree/nvim-web-devicons'

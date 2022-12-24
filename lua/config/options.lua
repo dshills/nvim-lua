@@ -1,7 +1,11 @@
+-- Set leader
 vim.g.mapleader = ' '
+-- Disable netrw at the very start of your init.lua (nvim-tree)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
+-- Global options
 vim.opt.autoindent = true
-vim.opt.background = 'dark'
 vim.opt.backup = false
 vim.opt.cindent = true
 vim.opt.clipboard = 'unnamedplus' -- use system clipboard (broken in firefox)

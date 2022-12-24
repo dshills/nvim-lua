@@ -1,3 +1,15 @@
+
+-- lsp keys
+-- bufmap('n', '<leader>I', '<cmd>lua vim.lsp.buf.hover()<cr>')
+-- Jump to the definition
+-- bufmap('n', '<leader>F', '<cmd>lua vim.lsp.buf.definition()<cr>')
+-- Lists all the implementations for the symbol under the cursor
+-- bufmap('n', '<leader>N', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+-- Lists all the references 
+-- bufmap('n', '<leader>z', '<cmd>lua vim.lsp.buf.references()<cr>')
+-- Renames all references to the symbol under the cursor
+--bufmap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<cr>')
+		
 local opts = { noremap=true, silent=true }
 -- noh
 vim.keymap.set('n', '<leader><cr>', ":noh<cr>", opts)
@@ -5,10 +17,19 @@ vim.keymap.set('n', '<leader><cr>', ":noh<cr>", opts)
 -- fuzzy find
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>a', builtin.find_files, opts)
+vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>tc', builtin.colorscheme, opts)
+vim.keymap.set('n', '<leader>tg', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>th', builtin.help_tags, opts)
+vim.keymap.set('n', '<leader>tk', builtin.keymaps, opts)
+vim.keymap.set('n', '<leader>to', builtin.vim_options, opts)
+vim.keymap.set('n', '<leader>tj', builtin.jumplist, opts)
+vim.keymap.set('n', '<leader>tr', builtin.registers, opts)
+vim.keymap.set('n', '<leader>ts', builtin.spell_suggest, opts)
 
 -- Toggle buffer hint
-vim.keymap.set('n', '<leader>b', ":call bufferhint#Popup()<cr>", opts)
-vim.keymap.set('n', '<leader>\\', ":call bufferhint#LoadPrevious()<cr>", opts)
+-- vim.keymap.set('n', '<leader>b', ":call bufferhint#Popup()<cr>", opts)
+-- vim.keymap.set('n', '<leader>\\', ":call bufferhint#LoadPrevious()<cr>", opts)
 
 -- Toggle file mgr
 vim.keymap.set('n', '<leader>f', ":NvimTreeToggle<cr>", opts)
