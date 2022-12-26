@@ -1,8 +1,13 @@
 -- Set leader
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 -- Disable netrw at the very start of your init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
 
 -- Global options
 vim.opt.autoindent = true

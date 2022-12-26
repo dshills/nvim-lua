@@ -1,4 +1,12 @@
 local opts = { noremap=true, silent=true }
+
+-- better experience
+vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
 -- noh
 vim.keymap.set('n', '<leader><cr>', ":noh<cr>", opts)
 
@@ -88,3 +96,32 @@ vim.keymap.set('n', '<c-\\>', ":vs<cr>", opts)
 -- VISUAL mode
 -- `gc` - Toggles the region using linewise comment
 -- `gb` - Toggles the region using blockwise comment
+
+-- Treesitter
+-- init_selection = '<c-space>',
+-- node_incremental = '<c-space>',
+-- scope_incremental = '<c-s>',
+-- node_decremental = '<c-backspace>',
+-- textobjects
+-- ['aa'] = '@parameter.outer',
+-- ['ia'] = '@parameter.inner',
+-- ['af'] = '@function.outer',
+-- ['if'] = '@function.inner',
+-- ['ac'] = '@class.outer',
+-- ['ic'] = '@class.inner',
+-- goto_next_start = {
+-- [']m'] = '@function.outer',
+-- [']]'] = '@class.outer',
+-- },
+-- goto_next_end = {
+-- [']M'] = '@function.outer',
+-- [']['] = '@class.outer',
+-- },
+-- goto_previous_start = {
+-- ['[m'] = '@function.outer',
+-- ['[['] = '@class.outer',
+-- },
+-- goto_previous_end = {
+-- ['[M'] = '@function.outer',
+-- ['[]'] = '@class.outer',
+-- },
