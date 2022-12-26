@@ -2,6 +2,10 @@ vim.opt.background = 'dark'
 
 vim.cmd('colorscheme vim-monokai-tasty')
 -- vim.cmd('colorscheme aurora')
+--[[ require('onedark').setup {
+    style = 'deep'
+} ]]
+--require('onedark').load()
 
 -- Transparent mode
 vim.api.nvim_set_hl(0, "Normal", { bg=NONE })

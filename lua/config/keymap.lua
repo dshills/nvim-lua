@@ -1,29 +1,3 @@
-
--- lsp keys
--- bufmap('n', '<leader>I', '<cmd>lua vim.lsp.buf.hover()<cr>')
--- Jump to the definition
--- bufmap('n', '<leader>F', '<cmd>lua vim.lsp.buf.definition()<cr>')
--- Lists all the implementations for the symbol under the cursor
--- bufmap('n', '<leader>N', '<cmd>lua vim.lsp.buf.implementation()<cr>')
--- Lists all the references 
--- bufmap('n', '<leader>z', '<cmd>lua vim.lsp.buf.references()<cr>')
--- Renames all references to the symbol under the cursor
---bufmap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<cr>')
-
--- gitsigns map
--- map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
--- map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
--- map('n', '<leader>hS', gs.stage_buffer)
--- map('n', '<leader>hu', gs.undo_stage_hunk)
--- map('n', '<leader>hR', gs.reset_buffer)
--- map('n', '<leader>hp', gs.preview_hunk)
--- map('n', '<leader>hb', function() gs.blame_line{full=true} end)
--- map('n', '<leader>hB', gs.toggle_current_line_blame)
--- map('n', '<leader>hd', gs.diffthis)
--- map('n', '<leader>hD', function() gs.diffthis('~') end)
--- map('n', '<leader>hX', gs.toggle_deleted)
--- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
-		
 local opts = { noremap=true, silent=true }
 -- noh
 vim.keymap.set('n', '<leader><cr>', ":noh<cr>", opts)
@@ -75,3 +49,42 @@ vim.keymap.set('n', 'Q', "<nop>", opts)
 
 -- Vertical split
 vim.keymap.set('n', '<c-\\>', ":vs<cr>", opts)
+
+-- Default mapings or defined elsewhere
+
+-- lsp keys
+-- bufmap('n', '<leader>I', '<cmd>lua vim.lsp.buf.hover()<cr>')
+-- Jump to the definition
+-- bufmap('n', '<leader>F', '<cmd>lua vim.lsp.buf.definition()<cr>')
+-- Lists all the implementations for the symbol under the cursor
+-- bufmap('n', '<leader>N', '<cmd>lua vim.lsp.buf.implementation()<cr>')
+-- Lists all the references 
+-- bufmap('n', '<leader>z', '<cmd>lua vim.lsp.buf.references()<cr>')
+-- Renames all references to the symbol under the cursor
+--bufmap('n', '<leader>R', '<cmd>lua vim.lsp.buf.rename()<cr>')
+
+-- gitsigns map
+-- map({'n', 'v'}, '<leader>hs', ':Gitsigns stage_hunk<CR>')
+-- map({'n', 'v'}, '<leader>hr', ':Gitsigns reset_hunk<CR>')
+-- map('n', '<leader>hS', gs.stage_buffer)
+-- map('n', '<leader>hu', gs.undo_stage_hunk)
+-- map('n', '<leader>hR', gs.reset_buffer)
+-- map('n', '<leader>hp', gs.preview_hunk)
+-- map('n', '<leader>hb', function() gs.blame_line{full=true} end)
+-- map('n', '<leader>hB', gs.toggle_current_line_blame)
+-- map('n', '<leader>hd', gs.diffthis)
+-- map('n', '<leader>hD', function() gs.diffthis('~') end)
+-- map('n', '<leader>hX', gs.toggle_deleted)
+-- map({'o', 'x'}, 'ih', ':<C-U>Gitsigns select_hunk<CR>')
+		
+-- Comment map
+-- NORMAL mode
+-- `gcc` - Toggles the current line using linewise comment
+-- `gbc` - Toggles the current line using blockwise comment
+-- `[count]gcc` - Toggles the number of line given as a prefix-count using linewise
+-- `[count]gbc` - Toggles the number of line given as a prefix-count using blockwise
+-- `gc[count]{motion}` - (Op-pending) Toggles the region using linewise comment
+-- `gb[count]{motion}` - (Op-pending) Toggles the region using blockwise comment
+-- VISUAL mode
+-- `gc` - Toggles the region using linewise comment
+-- `gb` - Toggles the region using blockwise comment

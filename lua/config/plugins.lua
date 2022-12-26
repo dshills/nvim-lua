@@ -26,6 +26,9 @@ Plug 'hrsh7th/nvim-cmp'
 Plug('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'})
 Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
+-- Comment
+Plug 'numToStr/Comment.nvim'
+
 -- Go support
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
@@ -68,9 +71,11 @@ Plug 'windwp/nvim-autopairs'
 -- colorscheme
 Plug 'patstockwell/vim-monokai-tasty'
 Plug 'ray-x/aurora'
+Plug 'navarasu/onedark.nvim'
 vim.call('plug#end')
 
 -- Configure Plugins
+require('config.comment')
 require('config.go')
 -- require('config.bufferhint')
 require('config.lualine')
