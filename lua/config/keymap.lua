@@ -1,3 +1,7 @@
+-- Set leader
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
 local opts = { noremap=true, silent=true }
 
 -- better experience
@@ -10,18 +14,31 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- noh
 vim.keymap.set('n', '<leader><cr>', ":noh<cr>", opts)
 
--- fuzzy find
+-- telescope
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>a', builtin.find_files, opts)
 vim.keymap.set('n', '<leader>b', builtin.buffers, opts)
+vim.keymap.set('n', '<leader>g', builtin.grep_string, opts)
+vim.keymap.set('n', '<leader>G', builtin.live_grep, opts)
+
+vim.keymap.set('n', '<leader>ta', builtin.autocommands, opts)
 vim.keymap.set('n', '<leader>tc', builtin.colorscheme, opts)
-vim.keymap.set('n', '<leader>tg', builtin.live_grep, opts)
+vim.keymap.set('n', '<leader>tg', builtin.git_files, opts)
 vim.keymap.set('n', '<leader>th', builtin.help_tags, opts)
+vim.keymap.set('n', '<leader>tj', builtin.jumplist, opts)
 vim.keymap.set('n', '<leader>tk', builtin.keymaps, opts)
 vim.keymap.set('n', '<leader>to', builtin.vim_options, opts)
-vim.keymap.set('n', '<leader>tj', builtin.jumplist, opts)
 vim.keymap.set('n', '<leader>tr', builtin.registers, opts)
 vim.keymap.set('n', '<leader>ts', builtin.spell_suggest, opts)
+vim.keymap.set('n', '<leader>tt', builtin.treesitter, opts)
+
+vim.keymap.set('n', '<leader>lci', builtin.lsp_incoming_calls, opts)
+vim.keymap.set('n', '<leader>lco', builtin.lsp_outgoing_calls, opts)
+vim.keymap.set('n', '<leader>ld', builtin.lsp_definitions, opts)
+vim.keymap.set('n', '<leader>li', builtin.lsp_implementations, opts)
+vim.keymap.set('n', '<leader>lr', builtin.lsp_references, opts)
+vim.keymap.set('n', '<leader>ls', builtin.lsp_document_symbols, opts)
+vim.keymap.set('n', '<leader>lt', builtin.lsp_type_definitions, opts)
 
 -- Toggle buffer hint
 -- vim.keymap.set('n', '<leader>b', ":call bufferhint#Popup()<cr>", opts)
@@ -31,8 +48,8 @@ vim.keymap.set('n', '<leader>ts', builtin.spell_suggest, opts)
 vim.keymap.set('n', '<leader>f', ":NvimTreeToggle<cr>", opts)
 
 -- ripgrep
-vim.keymap.set('n', '<leader>g', ":Rg" , opts)
-vim.keymap.set('n', '<leader>G', ":Rg <cword><cr>" , opts)
+-- vim.keymap.set('n', '<leader>g', ":Rg" , opts)
+-- vim.keymap.set('n', '<leader>G', ":Rg <cword><cr>" , opts)
 
 -- next, prev
 vim.keymap.set('n', '<c-p>', vim.diagnostic.goto_prev, opts)

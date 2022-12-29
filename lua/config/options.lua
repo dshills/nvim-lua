@@ -1,7 +1,3 @@
--- Set leader
-vim.g.mapleader = ' '
-vim.g.maplocalleader = ' '
-
 -- Disable netrw at the very start of your init.lua (nvim-tree)
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -9,44 +5,77 @@ vim.g.loaded_netrwPlugin = 1
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'
 
--- Global options
-vim.opt.autoindent = true
-vim.opt.backup = false
-vim.opt.cindent = true
-vim.opt.clipboard = 'unnamedplus' -- use system clipboard (broken in firefox)
-vim.opt.cmdheight = 2
-vim.opt.cursorcolumn = false
-vim.opt.cursorline = true
-vim.opt.errorbells = false
-vim.opt.expandtab = false -- use tab char
-vim.opt.guicursor = ""
-vim.opt.hidden = true
-vim.opt.hlsearch = true 
-vim.opt.ignorecase = true
-vim.opt.incsearch = true
-vim.opt.isfname:append("@-@")
-vim.opt.lazyredraw = true
-vim.opt.list = true
-vim.opt.listchars = { tab = '  ', nbsp = '␣', trail = '‗', extends = '>', precedes = '<', eol = ' ' }
-vim.opt.mouse = 'a'
-vim.opt.number = true
-vim.opt.relativenumber = false
-vim.opt.shiftwidth = 2 -- vis mode num spaces
-vim.opt.showbreak='↪'
-vim.opt.showmode = false
-vim.opt.signcolumn = "yes"
-vim.opt.smartcase = true --automatic lower except when upper chars
-vim.opt.smartindent = true
-vim.opt.softtabstop = 0
-vim.opt.spell = false
-vim.opt.swapfile = false
-vim.opt.tabstop = 2 -- indent
-vim.opt.termguicolors = true
-vim.opt.undodir = os.getenv( "HOME" ) .. '/.config/nvim/undo'
-vim.opt.undofile = true
-vim.opt.updatetime = 50
-vim.opt.wildmode = 'list:longest,full'
-vim.opt.wrap = true
+local opt = vim.opt
+
+-- files
+opt.backup = false
+opt.swapfile = false
+opt.undodir = os.getenv( "HOME" ) .. '/.config/nvim/undo'
+opt.undofile = true
+opt.isfname:append("@-@")
+
+-- line numbers
+opt.number = true
+opt.relativenumber = false
+
+-- tabs
+opt.expandtab = false -- use tab char
+opt.tabstop = 2 -- indent
+opt.shiftwidth = 2 -- vis mode num spaces
+opt.smartindent = true
+opt.autoindent = true
+-- opt.cindent = true
+
+-- search
+opt.ignorecase = true
+opt.smartcase = true --automatic lower except when upper chars
+opt.incsearch = true
+opt.hlsearch = true 
+
+-- cursor 
+opt.cursorcolumn = false
+opt.cursorline = true
+opt.guicursor = ""
+
+-- appearance
+opt.termguicolors = true
+opt.signcolumn = "yes"
+opt.cmdheight = 2
+opt.listchars = { tab = '  ', nbsp = '␣', trail = '‗', extends = '>', precedes = '<', eol = ' ' }
+opt.list = true
+opt.showmode = false
+opt.lazyredraw = true
+opt.updatetime = 50
+
+-- line wrapping
+opt.wrap = true
+opt.showbreak='↪'
+
+
+-- backspace
+opt.backspace = "indent,eol,start"
+
+-- clipboard
+opt.clipboard:append("unnamedplus")
+
+-- split windows
+opt.splitright = true
+opt.splitbelow = true
+
+-- word
+opt.iskeyword:append("-")
+
+-- buffers
+opt.hidden = true
+
+-- spell
+opt.spell = false
+
+-- mouse
+opt.mouse = 'a'
+
+-- completion
+--opt.wildmode = 'list:longest,full'
 
 -- Close on q
 vim.api.nvim_create_autocmd(

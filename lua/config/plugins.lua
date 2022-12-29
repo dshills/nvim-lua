@@ -34,7 +34,7 @@ Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
 
 -- grep
-Plug 'jremmen/vim-ripgrep'
+-- Plug 'jremmen/vim-ripgrep'
 
 -- git
 Plug 'tpope/vim-fugitive'
