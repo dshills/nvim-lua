@@ -52,6 +52,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 -- file manager
 Plug 'nvim-tree/nvim-tree.lua'
 
+Plug 'github/copilot.vim'
+
 -- Javascript
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
