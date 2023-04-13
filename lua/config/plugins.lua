@@ -52,7 +52,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 -- file manager
 Plug 'nvim-tree/nvim-tree.lua'
 
-Plug 'github/copilot.vim'
+-- Plug 'github/copilot.vim'
+Plug 'zbirenbaum/copilot.lua'
 
 -- Javascript
 Plug 'pangloss/vim-javascript'
@@ -88,3 +89,4 @@ require('config.nvim-lspconfig')
 require('config.nvim-tree')
 require('config.nvim-treesitter')
 require('config.nvim-telescope')
+require('config.copilot')
