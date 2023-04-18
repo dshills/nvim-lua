@@ -29,6 +29,9 @@ Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 -- Comment
 Plug 'numToStr/Comment.nvim'
 
+-- Easy Motion
+Plug 'easymotion/vim-easymotion'
+
 -- Go support
 Plug 'ray-x/go.nvim'
 Plug 'ray-x/guihua.lua'
