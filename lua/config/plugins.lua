@@ -7,6 +7,9 @@ Plug 'nvim-lua/plenary.nvim'
 -- icons
 Plug 'nvim-tree/nvim-web-devicons'
 
+-- Floating window support
+Plug('ray-x/guihua.lua', {['do'] = 'cd lua/fzy && make'})
+
 -- TMUX
 Plug 'christoomey/vim-tmux-navigator'
 
@@ -33,8 +36,7 @@ Plug 'numToStr/Comment.nvim'
 Plug 'easymotion/vim-easymotion'
 
 -- Go support
-Plug 'ray-x/go.nvim'
-Plug 'ray-x/guihua.lua'
+Plug('ray-x/go.nvim', {['for'] = 'go'})
 
 -- grep
 -- Plug 'jremmen/vim-ripgrep'
@@ -59,10 +61,10 @@ Plug 'nvim-tree/nvim-tree.lua'
 Plug 'zbirenbaum/copilot.lua'
 
 -- Javascript
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-Plug('styled-components/vim-styled-components', { branch = 'main' })
+Plug('pangloss/vim-javascript', { ['for'] = 'javescript' })
+Plug('leafgarland/typescript-vim', {['for'] = 'typescript'})
+Plug('peitalin/vim-jsx-typescript', {['for'] = 'typescript'})
+Plug('styled-components/vim-styled-components', { branch = 'main', ['for'] = 'javascript, typescript' })
 
 -- Fuzzy find: find all the things
 Plug('nvim-telescope/telescope-fzf-native.nvim', { ['do'] = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' })
@@ -93,3 +95,4 @@ require('config.nvim-tree')
 require('config.nvim-treesitter')
 require('config.nvim-telescope')
 require('config.copilot')
+require('config.guihua')
