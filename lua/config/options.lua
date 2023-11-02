@@ -80,7 +80,7 @@ opt.mouse = 'a'
 -- Close on q
 vim.api.nvim_create_autocmd(
 	"FileType",
-	{ pattern = { "help", "startuptime", "qf", "godoc", "fugitive" },
+	{ pattern = { "help", "startuptime", "qf", "godoc", "fugitive", "fugitiveblame" },
 	command = [[nnoremap <buffer> <silent> q :close<cr>]] }
 )
 

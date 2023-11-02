@@ -39,16 +39,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
     bufmap('n', '<leader>F', '<cmd>lua vim.lsp.buf.definition()<cr>')
 
     -- Jump to declaration
-    --bufmap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>')
+    bufmap('n', '<leader>D', '<cmd>lua vim.lsp.buf.declaration()<cr>')
 
     -- Lists all the implementations for the symbol under the cursor
     bufmap('n', '<leader>N', '<cmd>lua vim.lsp.buf.implementation()<cr>')
 
     -- Jumps to the definition of the type symbol
-    --bufmap('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
+    bufmap('n', '<leader>T', '<cmd>lua vim.lsp.buf.type_definition()<cr>')
 
     -- Lists all the references 
-    bufmap('n', '<leader>z', '<cmd>lua vim.lsp.buf.references()<cr>')
+    bufmap('n', '<leader>Z', '<cmd>lua vim.lsp.buf.references()<cr>')
 
     -- Displays a function's signature information
     --bufmap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<cr>')
